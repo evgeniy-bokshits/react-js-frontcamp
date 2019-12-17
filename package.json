@@ -1,0 +1,37 @@
+{
+  "name": "react-js-frontcamp",
+  "version": "1.0.0",
+  "description": "test project using reactJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgeniy-bokshits/react-js-frontcamp.git"
+  },
+  "author": "Yauheni Bokshyts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evgeniy-bokshits/react-js-frontcamp/issues"
+  },
+  "homepage": "https://github.com/evgeniy-bokshits/react-js-frontcamp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.2",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
