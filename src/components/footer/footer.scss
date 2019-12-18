@@ -1,0 +1,12 @@
+.footer {
+    background: lighten(#232323, 10%);
+    color: rgba(246,82,97, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+
+    span:first-child {
+        font-weight: 700;
+    }
+}

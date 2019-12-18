@@ -23,20 +23,16 @@ module.exports = {
         },
       },
       {
-        test: /\.(scss|sass|css)$/,
-        exclude: /node_modules/,
-        loaders: [
-          MiniCssExtractPlugin.loader,
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico)$/i,
+        use: [
           {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              sourceMap: true,
-              importLoaders: 1
-            }
+            loader: 'file-loader',
           },
-        'sass-loader',
-        ]
+        ],
       },
       {
         test: /\.(html)$/,
