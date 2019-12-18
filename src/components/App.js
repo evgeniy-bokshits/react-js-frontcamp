@@ -1,13 +1,23 @@
-
 import React, { Component } from "react";
 
-import '../styles/App.css';
+import { ErrorBoundary } from './error-boundary';
+import { Header } from "./header";
+
+import './App.scss';
+import { Footer } from "./footer";
+import { Search } from "./search";
+import Main from "./main/main";
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <h1>React Movies App!</h1>
+            <div className="App">
+                <ErrorBoundary>
+                    <Header/>
+                    <Main/>
+                    <div className="temp-devider" />
+                    <Footer/>
+                </ErrorBoundary>
             </div>
         );
     }
