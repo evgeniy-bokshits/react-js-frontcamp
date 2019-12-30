@@ -17,12 +17,6 @@ import store from '../../redux/store/store';
 class Main extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            films : [],
-            total : 0,
-            loading: true
-        };
-
         this.shouldComponentRender = this.shouldComponentRender.bind(this);
     }
 
@@ -31,25 +25,9 @@ class Main extends Component {
         fetchFilms();
     }
 
-    componentDidMount() {
-        // fetch(`${apiBaseUrl}?sortBy=release_date&sortOrder=desc&searchBy=title&limit=10`)
-        //     .then(response => response.json())
-        //     .then(result => {
-                // this.setState({films: this.state.films, total: this.state.total});
-            // })
-    }
-
     changeFilmContainer = (films, total) => {
         this.setState({films: films, total: total});
     };
-
-    findFilmsByGenre(genre) {
-        fetch(`${apiBaseUrl}?sortBy=release_date&sortOrder=desc&search=${genre}&searchBy=genres&limit=10`)
-            .then(response => response.json())
-            .then(result => {
-                this.setState({films: result.data, total: result.total});
-            })
-    }
 
     shouldComponentRender() {
         const {loading} = this.state;
@@ -59,9 +37,7 @@ class Main extends Component {
     }
 
     render() {
-        const {type, films, total, loading} = this.props;
-
-        if(!this.shouldComponentRender()) return <ClipLoader />
+        const { films, total } = this.props.films;
 
         return (
             <Router>
@@ -80,8 +56,7 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-    films: getAllSuccess(state),
-    // loading: getAllPending(state)
+    films: getAllSuccess(state)
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

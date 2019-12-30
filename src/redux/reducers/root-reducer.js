@@ -25,5 +25,5 @@ export function rootReducer(state = initialState, action) {
   };
 }
 
-export const getAllSuccess = state => {state.films, state.total, state.loading};
+export const getAllSuccess = state => ({films: state.films, total: state.total});
 export const getAllPending = state => state.loading;

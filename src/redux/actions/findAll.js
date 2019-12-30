@@ -1,10 +1,9 @@
-import { getAllSuccess, getAllPending } from '../actions/get-all';
+import { getAllSuccess } from '../actions/get-all';
 import { apiBaseUrl } from "../../infrastructure";
 
-function fetchFilms() {
+function findFilmsByGenre(genre) {
     return dispatch => {
-        dispatch(getAllPending());
-        fetch(`${apiBaseUrl}?sortBy=release_date&sortOrder=desc&searchBy=title&limit=10`)
+        fetch(`${apiBaseUrl}?sortBy=release_date&sortOrder=desc&search=${genre}&searchBy=genres&limit=10`)
         .then(result => result.json())
         .then(result => {
             if(result.error) {
@@ -16,4 +15,4 @@ function fetchFilms() {
     }
 }
 
-export default fetchFilms;
+export default findFilmsByGenre;
