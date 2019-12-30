@@ -3,7 +3,7 @@ import { FilmItem } from '../film-item';
 import './film-container.scss';
 
 const FilmContainer = (props) => {
-    const {total, films} = props;
+    const { films, total } = props;
 
     return (
         <div className="film-list">
@@ -15,7 +15,7 @@ const FilmContainer = (props) => {
                 <div></div>
             </div>
             <div className="film-list__search-result">
-                {films.length 
+                { total
                 ? films.map((el) => <FilmItem info={el} key={el.id}/>) 
                 : <span>No films found</span>}
             </div>

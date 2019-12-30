@@ -5,7 +5,6 @@ import { Header } from "./header";
 
 import './App.scss';
 import { Footer } from "./footer";
-import { Search } from "./search";
 import Main from "./main/main";
 
 class App extends Component {
